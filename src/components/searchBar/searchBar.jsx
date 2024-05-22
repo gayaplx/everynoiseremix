@@ -9,7 +9,7 @@ export default function SearchBar() {
     function validate(e) {
         e.preventDefault();
 
-        setIsValidated(!isValidated);
+        setIsValidated(true);
     }; // function that will check if we have the results of the API (for the moment we only have the validation of the form);
 
     return (
