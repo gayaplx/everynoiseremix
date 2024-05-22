@@ -1,3 +1,5 @@
+@import '../../globalStyles.scss';
+
 #searchBar {
 
     width: 600px;
@@ -13,7 +15,10 @@
     padding: 15px;
 
 
-    font-size: 20px;
+    font-size: 40px;
+    font-family: $clashDisplay;
+    font-weight: 600;
+
 
     transition: transform 0.4s ease-in-out;
 
