@@ -1,13 +1,17 @@
 import React from "react";
 
 import SearchBar from "./components/searchBar/searchBar";
+import Title from './components/title/title';
+
+
 
 import "./globalStyles.scss"
 
 export default function App() {
-    return(
+    return (
         <section id="body">
-            <SearchBar/>
+                <Title />
+                <SearchBar />
         </section>
     )
 }
