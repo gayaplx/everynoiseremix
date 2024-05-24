@@ -1,28 +1,37 @@
 @import '../../globalStyles.scss';
 
-#searchBar {
+#input_container {
+    width: 100%;
+    height: 100%;
 
-    width: 600px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius: 50px;
-    border: none;
+    #searchBar {
 
-    background-color: #F4F9E9;
+        width: 50%;
+        height: 50px;
 
-    outline: none;
+        border-radius: 50px;
+        border: none;
 
-    padding: 15px;
+        background-color: #F4F9E9;
+
+        outline: none;
+
+        padding: 15px;
 
 
-    font-size: 40px;
-    font-family: $clashDisplay;
-    font-weight: 600;
+        font-size: 40px;
+        font-family: $clashDisplay;
+        font-weight: 600;
 
 
-    transition: transform 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out;
 
-    &.validated {
-        transform: translateY(-100px);
+        &.validated {
+            transform: translateY(-200%);
+        }
     }
 }
