@@ -1,0 +1,15 @@
+@import '../../globalStyles.scss';
+
+#title {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: $clashDisplay;
+    font-size: 60px;
+
+    text-align: center;
+
+    color: $text_color;
+}
