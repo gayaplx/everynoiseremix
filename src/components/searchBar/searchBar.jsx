@@ -15,7 +15,7 @@ export default function SearchBar() {
     return (
 
         <form id="input_container" onSubmit={validate}>
-            <input type="text" className={isValidated ? "validated" : "pending"} id="searchBar"/>
+            <input placeholder="artist name" type="text" className={isValidated ? "validated" : "pending"} id="searchBar"/>
         </form>
 
     )
