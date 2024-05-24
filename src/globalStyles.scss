@@ -1,3 +1,13 @@
+// VARIABLES
+
+// fonts
+$clashDisplay: 'Clash Display', sans-serif;
+$background_color: #284B63;
+$text_color: #F4F9E9;
+// fonts
+
+
+// VARIABLES
 body {
     margin: 0;
     padding: 0;
@@ -7,11 +17,11 @@ body {
     
     position: relative;
 
-    background-color: #284B63;
+    background-color: $background_color;
 
 }
 
-#root {
+#root, #body {
 
     width: 100%;
     height: 100%;
@@ -19,13 +29,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
 }
-
-// VARIABLES
-
-// fonts
-$clashDisplay: 'Clash Display', sans-serif;
-// fonts
-
-
-// VARIABLES
