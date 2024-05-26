@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useTransition } from "react";
 
 
 // COMPONENTS
@@ -13,10 +13,20 @@ import "./globalStyles.scss"
 
 
 export default function App() {
+
+
+    // STATES
+    const [isValidated, setIsValidated] = useState(false);
+    const [artistName, setArtistName] = useState("");
+    // STATES
+
+
     return (
-        <section id="body">
-                <Title />
-                <SearchBar />
+        <section id="mainContainer">
+            <div id="searchBarContainer">
+                <Title artistName={artistName} />
+                <SearchBar setIsValidated={setIsValidated} setArtistName={setArtistName} />
+            </div>
         </section>
     )
 }

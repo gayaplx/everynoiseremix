@@ -18,10 +18,10 @@ body {
     position: relative;
 
     background-color: $background_color;
-
+    
 }
 
-#root, #body {
+#root, #mainContainer {
 
     width: 100%;
     height: 100%;
@@ -31,4 +31,18 @@ body {
     justify-content: center;
 
     position: relative;
+
+    #searchBarContainer {
+        width: 100%;
+        height: 50%;
+
+        position: absolute;
+        top: 0;
+
+        // background-color: blue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
