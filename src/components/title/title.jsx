@@ -2,7 +2,7 @@ import './title.scss'
 
 export default function Title({ artistName }) {
 
-    console.log(artistName)
+    // console.log(artistName)
 
     return (
         <h1 id="title">
