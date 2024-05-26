@@ -3,6 +3,8 @@ import React, { useState, useTransition } from "react";
 // COMPONENTS
 import SearchBar from "./components/searchBar/searchBar";
 import Title from "./components/title/title";
+import Results from "./components/results/results";
+
 // COMPONENTS
 
 // STYLESHEET
@@ -26,6 +28,7 @@ export default function App() {
           artistName={artistName}
         />
       </div>
+      <Results artistName={artistName} isValidated={isValidated} />
     </section>
   );
 }
