@@ -23,6 +23,7 @@ export default function App() {
           setIsValidated={setIsValidated}
           isValidated={isValidated}
           setArtistName={setArtistName}
+          artistName={artistName}
         />
       </div>
     </section>
