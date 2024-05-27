@@ -11,15 +11,49 @@ export default function SearchBar({
   setArtistName,
   artistName,
   accessToken,
-  setAccessToken
+  setAccessToken,
+  setGenres,
 }) {
+
+  async function getArtistId() {
+    // console.log("ready to fetch with this api token : " + accessToken) // OK
+    
+    let artistParams = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + accessToken
+      }
+    }
+
+    // console.log(artistParams) // OK
+    // console.log(artistName + " artist name")
+
+    let artistID = await fetch("https://api.spotify.com/v1/search?q=" + artistName + "&type=artist", artistParams)
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      // .then((data) => {
+      //   setIsValidated(true)
+      //   setGenres(data.artists.items[0].genres)
+      //   // console.log(data.artists.items[0].genres) // OK
+      // })
+
+  }
+
+  useEffect(() => {
+    if(artistName.length > 0) {
+      getArtistId();
+    }
+  }, [artistName])
 
   function validate(e) {
     e.preventDefault();
 
     setArtistName(e.target[0].value); // will store the name of the artist in a state (App.jsx);
 
-    setIsValidated(true); // sets the validation state to true (App.jsx) => will have to check if the API returns 200;
+
+
+    // setIsValidated(true); // sets the validation state to true (App.jsx) => will have to check if the API returns 200;
   } // function that will check if we have the results of the API (for the moment we only have the validation of the form);
 
 
