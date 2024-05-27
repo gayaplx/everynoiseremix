@@ -22,9 +22,10 @@ export default function App() {
   const [isValidated, setIsValidated] = useState(false); // state that will check if the input values are valid (will have to check if the API returns 200);
   const [artistName, setArtistName] = useState(""); // state that stores the name of the artist that we want to find;
   const [accessToken, setAccessToken] = useState("");
+  const [genres, setGenres] = useState([])
   // STATES
 
-  useEffect(() => {
+  useEffect(() => { // will generate an access token for the Spotify API
     var authParams = {
       method: "POST",
       headers: {
@@ -40,14 +41,10 @@ export default function App() {
     fetch("https://accounts.spotify.com/api/token", authParams)
       .then((results) => results.json())
       .then((data) => {
-      //   console.log(data);
-        setAccessToken(data.access_token)
+        setAccessToken(data.access_token) // sets the accessToken state with the result of the API call
       });
   }, [])
 
-  // useEffect(() => {
-  //   console.log("access token => " + accessToken)
-  // }, [accessToken])
 
   return (
     <section id="mainContainer">
@@ -60,9 +57,10 @@ export default function App() {
           artistName={artistName}
           accessToken={accessToken}
           setAccessToken={setAccessToken}
+          setGenres={setGenres}
         />
       </div>
-      <Results artistName={artistName} isValidated={isValidated} setAccessToken={setAccessToken} accessToken={accessToken} />
+      <Results artistName={artistName} isValidated={isValidated} setAccessToken={setAccessToken} accessToken={accessToken} genres={genres} />
     </section>
   );
 }
