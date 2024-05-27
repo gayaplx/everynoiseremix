@@ -13,6 +13,7 @@ import "./globalStyles.scss";
 export default function App() {
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID; // calling the spotify API parameters
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET; // calling the spotify API parameters
+  
   // STATES
   const [isValidated, setIsValidated] = useState(false); // state that will check if the input values are valid (will have to check if the API returns 200);
   const [artistName, setArtistName] = useState(""); // state that stores the name of the artist that we want to find;
