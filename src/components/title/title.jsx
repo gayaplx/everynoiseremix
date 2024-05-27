@@ -1,13 +1,5 @@
-import './title.scss'
+import "./title.scss";
 
 export default function Title({ artistName }) {
-
-    // console.log(artistName)
-
-    return (
-        <h1 id="title">
-            {artistName.length > 0 ? artistName : "title"}
-        </h1>
-    )
-
+  return <h1 id="title">{artistName.length > 0 ? artistName : "title"}</h1>;
 }
