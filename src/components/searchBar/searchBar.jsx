@@ -1,9 +1,6 @@
 import "./searchBar.scss";
 
-// import APIFetcher from "../../services/APIfetcher";
 import { useEffect, useState } from "react";
-
-
 
 export default function SearchBar({
   setIsValidated,
@@ -11,54 +8,50 @@ export default function SearchBar({
   setArtistName,
   artistName,
   accessToken,
-  setAccessToken,
   setGenres,
 }) {
-
-  async function getArtistId() {
+  async function getArtistGenres() {
     // console.log("ready to fetch with this api token : " + accessToken) // OK
-    
+
     let artistParams = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + accessToken
-      }
-    }
+        Authorization: "Bearer " + accessToken,
+      },
+    };
 
     // console.log(artistParams) // OK
-    // console.log(artistName + " artist name")
+    // console.log(artistName + " artist name") // OK
 
-    let artistID = await fetch("https://api.spotify.com/v1/search?q=" + artistName + "&type=artist", artistParams)
+    let artistID = await fetch(
+      "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist",
+      artistParams
+    ) //
       .then((response) => response.json())
       // .then((data) => console.log(data))
       .then((data) => {
-        setIsValidated(true)
-        setGenres(data.artists.items[0].genres)
+        setIsValidated(true);
+        setGenres(data.artists.items[0].genres); // isolating the genres and put into the genres state
         // console.log(data.artists.items[0].genres) // OK
-      })
-
+      });
   }
 
   useEffect(() => {
-    if(artistName.length > 0) {
-      getArtistId();
+    if (artistName.length > 0) {
+      // checks if the artist name isn't null to avoid calling the API for nothing
+      getArtistGenres();
     }
-  }, [artistName])
+  }, [artistName]); // waits for the artistName state to be set before to run the getArtistGenres function
 
-  function validate(e) {
+  function handleValidate(e) {
     e.preventDefault();
 
     setArtistName(e.target[0].value); // will store the name of the artist in a state (App.jsx);
-
-
-
-    // setIsValidated(true); // sets the validation state to true (App.jsx) => will have to check if the API returns 200;
-  } // function that will check if we have the results of the API (for the moment we only have the validation of the form);
-
+  }
 
   return (
-    <form id="input_container" onSubmit={validate}>
+    <form id="input_container" onSubmit={handleValidate}>
       <input
         placeholder="artist name"
         type="text"
