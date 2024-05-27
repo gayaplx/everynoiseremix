@@ -1,3 +1,7 @@
 export default function Results({ accessToken, genres }) {
-  return <h1>{genres}</h1>;
+  
+  const genre = genres.map((genre) => <li>{genre}</li>)
+  
+  
+  return <h1>{genre}</h1>;
 }
