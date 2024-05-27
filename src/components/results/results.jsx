@@ -1,3 +1,3 @@
-export default function Results({ artistName, isValidated, accessToken, genres }) {
+export default function Results({ accessToken, genres }) {
   return <h1>{genres}</h1>;
 }
