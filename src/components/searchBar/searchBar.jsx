@@ -1,6 +1,6 @@
 import "./searchBar.scss";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function SearchBar({
   setIsValidated,
