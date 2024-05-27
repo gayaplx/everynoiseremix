@@ -31,12 +31,12 @@ export default function SearchBar({
 
     let artistID = await fetch("https://api.spotify.com/v1/search?q=" + artistName + "&type=artist", artistParams)
       .then((response) => response.json())
-      .then((data) => console.log(data))
-      // .then((data) => {
-      //   setIsValidated(true)
-      //   setGenres(data.artists.items[0].genres)
-      //   // console.log(data.artists.items[0].genres) // OK
-      // })
+      // .then((data) => console.log(data))
+      .then((data) => {
+        setIsValidated(true)
+        setGenres(data.artists.items[0].genres)
+        // console.log(data.artists.items[0].genres) // OK
+      })
 
   }
 
