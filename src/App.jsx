@@ -40,7 +40,7 @@ export default function App() {
       .then((data) => {
         setAccessToken(data.access_token); // sets the accessToken state with the result of the API call
       });
-  }, []); // runs directly after the launch of the website;
+  }); // runs directly after the launch of the website;
 
   return (
     <section id="mainContainer">
